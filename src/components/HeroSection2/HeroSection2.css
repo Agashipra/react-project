@@ -1,3 +1,4 @@
+/* HeroSection2.css */
 .hero {
     position: relative;
     text-align: center;
@@ -13,38 +14,36 @@
 }
 
 .logo img {
-    width: 200px;
-    height: 120px;
+    width: 100px;
+    height: 100px;
 }
 
 .hero-header {
-    margin-top: 0px;
+    margin-top: 20px;
 }
 
 .brand-name {
     margin: 0;
     font-size: 3em;
     font-weight: bold;
-    text-align: top;
 }
 
 .brand-subtitle {
     margin: 0;
     font-size: 1.5em;
     font-weight: normal;
-    text-align: center;
 }
 
 .hero-text {
     margin-top: 20px;
-    font-size: 1em;
+    font-size: 1.5em;
     font-weight: normal;
 }
 
 .hero-text h1 {
     margin: 0;
     text-align: center;
-    font-size: 1em;
+    font-size: 1.5em;
     font-weight: normal;
 }
 
@@ -61,8 +60,8 @@
     border: 2px solid white;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     margin: 0 20px;
-    transform: rotate(-3deg);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transform: rotate(-15deg);
+    transition: transform 0.15s ease, box-shadow 0.4s ease;
     width: 40%;
 }
 
@@ -72,7 +71,7 @@
 }
 
 .polaroid:hover {
-    transform: rotate(0deg);
+    transform: rotate(10deg);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
@@ -85,7 +84,7 @@
     top: 20px;
     right: 20px;
     display: flex;
-    gap: 40px;
+    gap: 20px;
 }
 
 .icon {
@@ -95,5 +94,5 @@
 }
 
 .icon i {
-    font-size: 1em;
+    font-size: 1.2em;
 }

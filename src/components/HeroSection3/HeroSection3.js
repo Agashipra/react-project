@@ -1,11 +1,10 @@
 import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
-import "./HeroSection.css";
-import img1 from "./images/img1.jpg";
-import img2 from "./images/img2.jpg";
-import logo from "./images/logo.jpg";
+import "./HeroSection3.css";
+import img5 from "./images/img5.jpg";
+import img6 from "./images/img6.jpg";
 
-const HeroSection1 = ({ isActive }) => {
+const HeroSection3 = ({ isActive }) => {
   const heroTextRef = useRef(null);
   const heroPrintRef = useRef(null);
   const heroImagesRef = useRef([]);
@@ -15,20 +14,19 @@ const HeroSection1 = ({ isActive }) => {
     if (isActive) {
       gsap.fromTo(
         heroTextRef.current,
-        { y: -50, opacity: 0 },
+        { y: 50, opacity: 0 },
         { y: 0, opacity: 1, duration: 1.5, ease: "power2.out" }
       );
 
       heroImagesRef.current.forEach((img, index) => {
         gsap.fromTo(
           img,
-          { y: 50, opacity: 0, rotation: index % 2 === 0 ? -5 : 5 },
+          { opacity: 0, x: index % 2 === 0 ? -200 : 200 },
           {
-            y: 0,
             opacity: 1,
-            rotation: 0,
+            x: 0,
             duration: 1.5,
-            delay: index * 0.5,
+            delay: index * 0.3,
             ease: "power2.out",
           }
         );
@@ -45,25 +43,23 @@ const HeroSection1 = ({ isActive }) => {
           });
           heroImagesRef.current.forEach((img, index) => {
             gsap.to(img, {
-              y: 0,
               opacity: 1,
-              rotation: 0,
+              x: 0,
               duration: 1,
               ease: "power2.out",
             });
           });
         } else {
           gsap.to(heroTextRef.current, {
-            y: -50,
+            y: 50,
             opacity: 0,
             duration: 1,
             ease: "power2.out",
           });
           heroImagesRef.current.forEach((img, index) => {
             gsap.to(img, {
-              y: 50,
               opacity: 0,
-              rotation: index % 2 === 0 ? -5 : 5,
+              x: index % 2 === 0 ? -200 : 200,
               duration: 1,
               ease: "power2.out",
             });
@@ -81,23 +77,16 @@ const HeroSection1 = ({ isActive }) => {
 
   return (
     <section className={`hero ${isActive ? "active" : ""}`}>
-      <div className="logo">
-        <img src={logo} alt="Logo" />
-      </div>
-      <div className="hero-header">
-        <h1 className="brand-name">ETRO</h1>
-        <h2 className="brand-subtitle">Home Textile</h2>
-      </div>
       <div className="hero-text" ref={heroTextRef}>
-        <h1>This is a print Collection</h1>
+        <h1>Colourful, Geometrical and Sophisticated</h1>
       </div>
       <div className="hero-print" ref={heroPrintRef}>
-        <h2>PRINT</h2>
+        <h2>Ethnic Textures</h2>
       </div>
       <div className="explore-button" ref={exploreButtonRef}>
         <button
           style={{
-            padding: "15px 30px",
+            padding: "15px 40px",
             fontSize: "1.2em",
             fontFamily: "Arial, sans-serif",
           }}
@@ -108,35 +97,21 @@ const HeroSection1 = ({ isActive }) => {
       <div className="hero-images">
         <div className="polaroid">
           <img
-            src={img1}
-            alt="Print 1"
+            src={img5}
+            alt="Print 5"
             ref={(el) => (heroImagesRef.current[0] = el)}
           />
         </div>
         <div className="polaroid">
           <img
-            src={img2}
-            alt="Print 2"
+            src={img6}
+            alt="Print 6"
             ref={(el) => (heroImagesRef.current[1] = el)}
           />
-        </div>
-      </div>
-      <div className="top-right">
-        <div className="icon">
-          <i className="fas fa-search"></i> Search
-        </div>
-        <div className="icon">
-          <i className="fas fa-heart"></i> Wishlist
-        </div>
-        <div className="icon">
-          <i className="fas fa-phone"></i> Contact Us
-        </div>
-        <div className="icon">
-          <i className="fas fa-user"></i> My Account
         </div>
       </div>
     </section>
   );
 };
 
-export default HeroSection1;
+export default HeroSection3;
